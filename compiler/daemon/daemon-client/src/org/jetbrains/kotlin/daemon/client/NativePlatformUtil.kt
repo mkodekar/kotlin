@@ -24,7 +24,7 @@ import java.net.URLClassLoader
 
 private class NativePlatformLauncherWrapper {
     private val nativeLauncher: ProcessLauncher by lazy {
-        val libdir = File("." + File.pathSeparator + "dist" + File.pathSeparator + "np").canonicalFile
+        val libdir = File("." + File.pathSeparator + "dist" + File.separator + "np").canonicalFile
         val nativePaths = System.getProperty("java.library.path")
         System.setProperty("java.library.path",
                            nativePaths?.let { it + File.pathSeparator + libdir.canonicalPath }
